@@ -19,10 +19,9 @@ public class MainActivity extends AppCompatActivity {
     int n=0;
     private RadioGroup radioGroup;
     private RadioButton radioButtonSelected;
-    public int count=0;
+    public int count=1;
     int index=0;
     public int status=0;
-    int number =0;
     final ArrayList<Integer> arrList= new ArrayList<Integer>();
     final ArrayList<String> questions = new ArrayList<String>();
     final Random rand = new Random();
@@ -35,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         btn = (Button)findViewById(R.id.next);
         b1.setVisibility(View.VISIBLE);
         btn.setVisibility(View.INVISIBLE);
-
+//        final int sum=0;
+        final int [] resul = {0,0,0,0,0,0,0,0,0,0};
 
 /////this is start button
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         questions.add("What is an activity in Android?_Activity performs the actions on the screen_Screen UI_Manage the Application content_1");//1st
         questions.add("How many sizes are supported by Android?_Android supported all sizes_Android supports small,normal, large and extra-large sizes_Size is undefined in android_3");//3rd wala
         questions.add("How to access the context in android content provider?_Using getContext() in onCreate()_Using getApplicationContext() at anywhere in an application_Both A & B_3");//3rd wala
-        questions.add("What is APK in android?_Android packaging kit_Android package_None of the above._1");//1st wala ok hai
+//        questions.add("What is APK in android?_Android packaging kit_Android package_None of the above._1");//1st wala ok hai
         questions.add("The best practice to give \"textSize\" in :_pt_sp_px_2");//2nd wala
         questions.add("Images are drop in which folder?_Drawable_Values_Mipmap_1");//1st wala
         questions.add("How many Orientation in RelativeLayout?_Vertical_Horizontal_None of them_3");//3rd wala
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this," index = "+index,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this," index = "+index,Toast.LENGTH_SHORT).show();
 
                 index=0;
                 index = rand.nextInt(arrList.size());
@@ -84,53 +84,96 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
 //////this is a next button
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
 //////////////////////////*****************************yeha se compiler check kre ga ke jo user ne select ki hai kia wo wakai sahe hai ya nhe...
+                if (count < 10) {
+                    radioGroup = (RadioGroup) findViewById(R.id.radioGp);
+                    int idDaata = radioGroup.getCheckedRadioButtonId();
+                    radioButtonSelected = (RadioButton) findViewById(idDaata);
+                    String data = null;
+                    data = radioButtonSelected.getText().toString();
+//                    Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
+                    String[] arr = questions.get(index).split("_");
+                    int option = 0;
+                    option = Integer.valueOf(arr[4]);
+//                Toast.makeText(MainActivity.this, arr[4], Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, arr[Integer.valueOf(arr[4])], Toast.LENGTH_SHORT).show();
+
+                    if (data.equals(arr[option])) {
+                      resul[count-1] = 10;
+                    }
+                    else
+                    {
+                        resul[count-1] = 0;
+                    }
+                    Toast.makeText(MainActivity.this, String.valueOf(resul[count-1])+", Count = "+count,Toast.LENGTH_SHORT).show();
 
 
-//   // get selected radio button from radioGroup
-//                int selectedId = radioGroup.getCheckedRadioButtonId();
-//
-//                // find the radiobutton by returned id
-//                radioButtonSelected= (RadioButton) findViewById(selectedId);
-////                int selectedId = radioGroup.getCheckedRadioButtonId();
-////                 //find the radiobutton by returned id
-////                radioButtonSelected = (RadioButton) findViewById(selectedId);
-//                String data = null;
-//                data = radioButtonSelected.getText().toString();
-//                Toast.makeText(MainActivity.this,data,Toast.LENGTH_SHORT).show();
-//                String[] arr = questions.get(index).split("_");
-//                questions.remove(index);
-//                int option = 0;
-//                option = Integer.valueOf(arr[4]);
-//                if (data.equals(arr[option]))
-//                {
-//                    number +=10;
-//                }
+                questions.remove(index);
 
 /////////////////////////////****************************yeha se compiler new question ko generte krke set kre ga...
-
-                display();
+                    ++count;
+                    display();
                 }
+                else
+                {
+                    RadioButton r1 =(RadioButton)findViewById(R.id.rad1);
+                    RadioButton r2 =(RadioButton)findViewById(R.id.rad2);
+                    RadioButton r3 =(RadioButton)findViewById(R.id.rad3);
+                    r1.setChecked(false);
+                    r2.setChecked(false);
+                    r3.setChecked(false);
+                    r1.setText("");
+                    r2.setText("");
+                    r3.setText("");
+                    Toast.makeText(MainActivity.this, "Sorry No More Question Available!!\nPlease Press The Result Button",Toast.LENGTH_SHORT).show();
+                }
+            }
             });
 
 
+        Button btnResult = (Button)findViewById(R.id.result);
+        btnResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+int resultMain=0;
+                if (count==10)
+                {
 
+                    for (int i=0;i<10;i++)
+                    {
+                        resultMain = resultMain + resul[i];
+                    }
+                    Toast.makeText(MainActivity.this,resultMain, Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this,"Please Complete The Test First!!",Toast.LENGTH_SHORT).show();
+                }
 
-
+            }
+        });
 
 
 
 
 
     }
+
+//    public int setNumber()
+//    {
+//        return number;
+//    }
+//    public void getNumber(int num)
+//    {
+//        this.number = num;
+//    }
+
 public void display()
 {
     index=0;
@@ -158,6 +201,7 @@ public void display()
 //    Toast.makeText(MainActivity.this," number = "+number,Toast.LENGTH_SHORT).show();
 
 }
+
 
 }
 
