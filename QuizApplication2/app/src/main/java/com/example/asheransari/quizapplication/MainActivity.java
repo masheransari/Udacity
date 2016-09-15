@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton radioButtonSelected;
     public int count=1;
     int index=0;
+    private int number=0;
     public int status=0;
     final ArrayList<Integer> arrList= new ArrayList<Integer>();
     final ArrayList<String> questions = new ArrayList<String>();
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         b1.setVisibility(View.VISIBLE);
         btn.setVisibility(View.INVISIBLE);
 //        final int sum=0;
-        final int [] resul = {0,0,0,0,0,0,0,0,0,0};
+//        int [] resul = {0,0,0,0,0,0,0,0,0,0};
 
 /////this is start button
 
@@ -89,50 +90,54 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            String data=null;
 //////////////////////////*****************************yeha se compiler check kre ga ke jo user ne select ki hai kia wo wakai sahe hai ya nhe...
-                if (count < 10) {
-                    radioGroup = (RadioGroup) findViewById(R.id.radioGp);
-                    int idDaata = radioGroup.getCheckedRadioButtonId();
-                    radioButtonSelected = (RadioButton) findViewById(idDaata);
-                    String data = null;
-                    data = radioButtonSelected.getText().toString();
-//                    Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
-                    String[] arr = questions.get(index).split("_");
-                    int option = 0;
-                    option = Integer.valueOf(arr[4]);
-//                Toast.makeText(MainActivity.this, arr[4], Toast.LENGTH_SHORT).show();
-//                Toast.makeText(MainActivity.this, arr[Integer.valueOf(arr[4])], Toast.LENGTH_SHORT).show();
-
-                    if (data.equals(arr[option])) {
-                      resul[count-1] = 10;
-                    }
-                    else
-                    {
-                        resul[count-1] = 0;
-                    }
-                    Toast.makeText(MainActivity.this, String.valueOf(resul[count-1])+", Count = "+count,Toast.LENGTH_SHORT).show();
-
-
+//                if (count < 10) {
+//
+//                    radioGroup = (RadioGroup) findViewById(R.id.radioGp);
+//                    int idDaata = radioGroup.getCheckedRadioButtonId();
+//                    radioButtonSelected = (RadioButton) findViewById(idDaata);
+//                    data = radioButtonSelected.getText().toString();
+//                    if (!data.equals("")){
+//                    String[] arr = questions.get(index).split("_");
+//                    int option = 0;
+//                    option = Integer.valueOf(arr[4]);
+//
+//                    if (data.equals(arr[option])) {
+//                        getNumber(10);
+//                    }
+//                    else
+//                    {
+//                        getNumber(0);
+//                    }
+//                    Toast.makeText(MainActivity.this, ", Count = "+count,Toast.LENGTH_SHORT).show();
+//
+//
                 questions.remove(index);
-
-/////////////////////////////****************************yeha se compiler new question ko generte krke set kre ga...
-                    ++count;
+//
+///////////////////////////////****************************yeha se compiler new question ko generte krke set kre ga...
+//                    ++count;
                     display();
-                }
-                else
-                {
-                    RadioButton r1 =(RadioButton)findViewById(R.id.rad1);
-                    RadioButton r2 =(RadioButton)findViewById(R.id.rad2);
-                    RadioButton r3 =(RadioButton)findViewById(R.id.rad3);
-                    r1.setChecked(false);
-                    r2.setChecked(false);
-                    r3.setChecked(false);
-                    r1.setText("");
-                    r2.setText("");
-                    r3.setText("");
-                    Toast.makeText(MainActivity.this, "Sorry No More Question Available!!\nPlease Press The Result Button",Toast.LENGTH_SHORT).show();
-                }
+//                    }
+//                    else
+//                    {
+//                        Toast.makeText(MainActivity.this,"Please Select First",Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//                else
+//                {
+//                    Toast.makeText(MainActivity.this,setNumber(),Toast.LENGTH_SHORT).show();
+//                    RadioButton r1 =(RadioButton)findViewById(R.id.rad1);
+//                    RadioButton r2 =(RadioButton)findViewById(R.id.rad2);
+//                    RadioButton r3 =(RadioButton)findViewById(R.id.rad3);
+//                    r1.setChecked(false);
+//                    r2.setChecked(false);
+//                    r3.setChecked(false);
+//                    r1.setText("");
+//                    r2.setText("");
+//                    r3.setText("");
+//                    Toast.makeText(MainActivity.this, "Sorry No More Question Available!!\nPlease Press The Result Button",Toast.LENGTH_SHORT).show();
+//                }
             }
             });
 
@@ -147,7 +152,7 @@ int resultMain=0;
 
                     for (int i=0;i<10;i++)
                     {
-                        resultMain = resultMain + resul[i];
+//                        resultMain = resultMain + resul[i];
                     }
                     Toast.makeText(MainActivity.this,resultMain, Toast.LENGTH_SHORT).show();
                 }
@@ -165,14 +170,14 @@ int resultMain=0;
 
     }
 
-//    public int setNumber()
-//    {
-//        return number;
-//    }
-//    public void getNumber(int num)
-//    {
-//        this.number = num;
-//    }
+    public int setNumber()
+    {
+        return number;
+    }
+    public void getNumber(int num)
+    {
+        this.number = num+10;
+    }
 
 public void display()
 {
