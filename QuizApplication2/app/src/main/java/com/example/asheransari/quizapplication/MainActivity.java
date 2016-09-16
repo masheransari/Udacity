@@ -19,13 +19,14 @@ public class MainActivity extends AppCompatActivity {
     int n=0;
     private RadioGroup radioGroup;
     private RadioButton radioButtonSelected;
-    public int count=1;
+    public int count=0;
     int index=0;
-    private int number=0;
     public int status=0;
     final ArrayList<Integer> arrList= new ArrayList<Integer>();
     final ArrayList<String> questions = new ArrayList<String>();
     final Random rand = new Random();
+    public int number=0;
+    public int cou=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         btn = (Button)findViewById(R.id.next);
         b1.setVisibility(View.VISIBLE);
         btn.setVisibility(View.INVISIBLE);
-//        final int sum=0;
-//        int [] resul = {0,0,0,0,0,0,0,0,0,0};
 
 /////this is start button
 
@@ -45,11 +44,10 @@ public class MainActivity extends AppCompatActivity {
             arrList.add(i);
         }
 
-//        int [] arr = {1,2,3,4,5,6,7,8,9,10};
         questions.add("What is an activity in Android?_Activity performs the actions on the screen_Screen UI_Manage the Application content_1");//1st
         questions.add("How many sizes are supported by Android?_Android supported all sizes_Android supports small,normal, large and extra-large sizes_Size is undefined in android_3");//3rd wala
         questions.add("How to access the context in android content provider?_Using getContext() in onCreate()_Using getApplicationContext() at anywhere in an application_Both A & B_3");//3rd wala
-//        questions.add("What is APK in android?_Android packaging kit_Android package_None of the above._1");//1st wala ok hai
+        questions.add("What is APK in android?_Android packaging kit_Android package_None of the above._1");//1st wala ok hai
         questions.add("The best practice to give \"textSize\" in :_pt_sp_px_2");//2nd wala
         questions.add("Images are drop in which folder?_Drawable_Values_Mipmap_1");//1st wala
         questions.add("How many Orientation in RelativeLayout?_Vertical_Horizontal_None of them_3");//3rd wala
@@ -61,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(MainActivity.this," index = "+index,Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this," index = "+index,Toast.LENGTH_SHORT).show();
 
                 index=0;
                 index = rand.nextInt(arrList.size());
@@ -77,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 r2.setText(quesQuiz[2]);
                 r3.setText(quesQuiz[3]);
 //                Toast.makeText(MainActivity.this," index = "+index,Toast.LENGTH_SHORT).show();
-                arrList.remove(index);
+//                arrList.remove(index);
                 btn.setVisibility(View.VISIBLE);
                 b1.setVisibility(View.INVISIBLE);
             }
@@ -85,61 +83,43 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//////this is a next button
 
+//////this is a next button
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            String data=null;
+            cou =questions.size();
+                if (cou >0) {
+                    radioGroup = (RadioGroup) findViewById(R.id.radioGp);
+                    int idDaata = radioGroup.getCheckedRadioButtonId();
+                    radioButtonSelected = (RadioButton) findViewById(idDaata);
+                    String data = null;
+                    data = radioButtonSelected.getText().toString();
+                    String[] arr = questions.get(index).split("_");
+                    int option = 0;
+                    option = Integer.valueOf(arr[4]);
+
+                    if (data.equals(arr[option])) {
+                        number = number + 10;
+                    } else {
+                        number += 0;
+                    }
+//                    Toast.makeText(MainActivity.this, String.valueOf(questions.size()) + ", Count = " + arrList.size() + ", Number = " + number, Toast.LENGTH_SHORT).show();
 //////////////////////////*****************************yeha se compiler check kre ga ke jo user ne select ki hai kia wo wakai sahe hai ya nhe...
-//                if (count < 10) {
-//
-//                    radioGroup = (RadioGroup) findViewById(R.id.radioGp);
-//                    int idDaata = radioGroup.getCheckedRadioButtonId();
-//                    radioButtonSelected = (RadioButton) findViewById(idDaata);
-//                    data = radioButtonSelected.getText().toString();
-//                    if (!data.equals("")){
-//                    String[] arr = questions.get(index).split("_");
-//                    int option = 0;
-//                    option = Integer.valueOf(arr[4]);
-//
-//                    if (data.equals(arr[option])) {
-//                        getNumber(10);
-//                    }
-//                    else
-//                    {
-//                        getNumber(0);
-//                    }
-//                    Toast.makeText(MainActivity.this, ", Count = "+count,Toast.LENGTH_SHORT).show();
-//
-//
-                questions.remove(index);
-//
-///////////////////////////////****************************yeha se compiler new question ko generte krke set kre ga...
-//                    ++count;
+                    ++count;
+                    questions.remove(index);
+                    arrList.remove(index);
+                    Toast.makeText(MainActivity.this, String.valueOf(questions.size()) + ", Count = " + arrList.size() + ", Number = " + number, Toast.LENGTH_SHORT).show();
+/////////////////////////////****************************yeha se compiler new question ko generte krke set kre ga...
                     display();
-//                    }
-//                    else
-//                    {
-//                        Toast.makeText(MainActivity.this,"Please Select First",Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//                else
-//                {
-//                    Toast.makeText(MainActivity.this,setNumber(),Toast.LENGTH_SHORT).show();
-//                    RadioButton r1 =(RadioButton)findViewById(R.id.rad1);
-//                    RadioButton r2 =(RadioButton)findViewById(R.id.rad2);
-//                    RadioButton r3 =(RadioButton)findViewById(R.id.rad3);
-//                    r1.setChecked(false);
-//                    r2.setChecked(false);
-//                    r3.setChecked(false);
-//                    r1.setText("");
-//                    r2.setText("");
-//                    r3.setText("");
-//                    Toast.makeText(MainActivity.this, "Sorry No More Question Available!!\nPlease Press The Result Button",Toast.LENGTH_SHORT).show();
-//                }
+                }
+                else
+                {
+                    --cou;
+                    Toast.makeText(MainActivity.this,"Sorry No More Questions Available.\nPlease Press The Result Button\nTo Show Result..",Toast.LENGTH_SHORT).show();
+                }
             }
-            });
+        });
 
 
         Button btnResult = (Button)findViewById(R.id.result);
@@ -150,10 +130,6 @@ int resultMain=0;
                 if (count==10)
                 {
 
-                    for (int i=0;i<10;i++)
-                    {
-//                        resultMain = resultMain + resul[i];
-                    }
                     Toast.makeText(MainActivity.this,resultMain, Toast.LENGTH_SHORT).show();
                 }
                 else
@@ -170,21 +146,21 @@ int resultMain=0;
 
     }
 
-    public int setNumber()
-    {
-        return number;
-    }
-    public void getNumber(int num)
-    {
-        this.number = num+10;
-    }
+//    public int setNumber()
+//    {
+//        return number;
+//    }
+//    public void getNumber(int num)
+//    {
+//        this.number = num;
+//    }
 
 public void display()
 {
     index=0;
     index = rand.nextInt(arrList.size());
 //                    System.out.println("Selected: "+list.remove(index));
-    arrList.remove(index);
+//    arrList.remove(index);
 //                radioButtonSelected.setSelected(false);
     String [] quesQuiz = questions.get(index).split("_");
     TextView t1 = (TextView)findViewById(R.id.question);
