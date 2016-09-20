@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnNext;
+    Button btnNext, btnResult;
     public RadioGroup radioGroup;
     public RadioButton radioButtonSelected;
     int index=0;
@@ -60,12 +60,9 @@ public class MainActivity extends AppCompatActivity {
                 if (increment <= 11) {
                     if(increment ==10)
                     {
-////                        submit();
-//                        increment = 11;
 
                         display();
                         btnNext.setText("Click Here To Save Question 10 Answer");
-//                        Toast.makeText(MainActivity.this," increment = sgfvasfzv "+increment,Toast.LENGTH_SHORT).show();
                     }
                     else if (increment == 11)
                     {
@@ -83,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
                         {
                             btnNext.setText("Question " + (increment + 1));
                             display();
-//                            Toast.makeText(MainActivity.this, " increment in if condition= " + increment, Toast.LENGTH_SHORT).show();
                         }
                         else {
                             int check = 0;
@@ -107,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                             int option = 0;
                             option = Integer.valueOf(arr[4]);
-//                            Toast.makeText(MainActivity.this,data +" = data , "+option +"=option , and arr["+option+"] = "+arr[option],Toast.LENGTH_SHORT).show();
                             if (data.equals(arr[option])) {
                             number = number + 10;
                             }
@@ -115,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
                             {
                             number += 0;
                             }
-//                            Toast.makeText(MainActivity.this,"number = "+number,Toast.LENGTH_SHORT).show();
                             btnNext.setText("Question " + (increment + 1));
                             display();
                         }
@@ -124,11 +118,17 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     Toast.makeText(MainActivity.this, "Sorry No Question Available!!\nPlease Press The Result Button",Toast.LENGTH_SHORT).show();
                 }
-//                Toast.makeText(MainActivity.this,"Number = "+number,Toast.LENGTH_SHORT).show();
             }
         });
 /////////yeha tak ke hamra kam sirf question ke button pe hwa hai...
-
+        btnResult = (Button)findViewById(R.id.result);
+        btnResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,result.class);
+                startActivity(i);
+            }
+        });
 
     }
 
@@ -159,30 +159,6 @@ public class MainActivity extends AppCompatActivity {
         return returnInt;
     }
 
-//    public void submit() {
-//            radioGroup = (RadioGroup) findViewById(R.id.radioGp);
-//                int idDaata = radioGroup.getCheckedRadioButtonId();
-//                radioButtonSelected = (RadioButton) findViewById(idDaata);
-//                String data = null;
-//                data = radioButtonSelected.getText().toString();
-//                String[] arr = questions.get(index).split("_");
-//                int option = 0;
-//                option = Integer.valueOf(arr[4]);
-//                Toast.makeText(MainActivity.this,"[Option = "+option + ", arr[option] = "+arr[option],Toast.LENGTH_SHORT).show();
-//                Toast.makeText(MainActivity.this,"DAta = "+data, Toast.LENGTH_SHORT).show();
-//                if (data.equals(arr[option])) {
-//                    number = number + 10;
-////                    Toast.makeText(MainActivity.this, "in if condition NUmber = "+number,Toast.LENGTH_SHORT).show();///                }else
-//                } else {
-//                    number += 0;
-////                    Toast.makeText(MainActivity.this, "in else condition NUmber = "+number,Toast.LENGTH_SHORT).show();///                }else
-//                }
-//            Toast.makeText(MainActivity.this, "NUmber = "+number,Toast.LENGTH_SHORT).show();///                }else
-////                {
-////                    Toast.makeText(MainActivity.this, "Please Select* the Option First!!",Toast.LENGTH_SHORT).show();
-////                }
-//    }
-
 
     public void display()
     {
@@ -193,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
         {
             arr[i] = quesQuiz[i];
         }
-//        Toast.makeText(MainActivity.this,arr[4],Toast.LENGTH_SHORT).show();
         arrList.remove(index);
         questions.remove(index);
         TextView t1 = (TextView) findViewById(R.id.question);
