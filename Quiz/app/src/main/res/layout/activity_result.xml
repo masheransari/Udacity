@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.asheransari.quiz.result">
+    tools:context="com.example.asheransari.quiz.result"
+    android:background="#ffffff">
 
     <ImageView
         android:layout_width="match_parent"
@@ -15,4 +16,13 @@
         android:id="@+id/imageView"
         android:layout_marginTop="20dp"
         />
+    <TextView
+        android:layout_below="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:id="@+id/textStatus"
+        android:textAlignment="center"/>
 </RelativeLayout>

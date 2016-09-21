@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Quiz</string>
+    <string name="num">number</string>
 </resources>

@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnNext = (Button)findViewById(R.id.next);
-        btnNext.setText("Question 1");
-
-
+        btnNext.setText("Goto Question 1");
+        btnResult = (Button)findViewById(R.id.result);
+        btnResult.setVisibility(View.INVISIBLE);
 
         for (int i=0; i<10;i++)
         {
@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int result=0;
                 String data = null;
                 increment = increment+1;
                 RadioButton ra1 = (RadioButton)findViewById(R.id.rad1);
@@ -66,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else if (increment == 11)
                     {
+                        btnResult.setVisibility(View.VISIBLE);
+                        btnNext.setVisibility(View.GONE);
                         btnNext.setText("Sorry No Question Available");
                         ra1.setText("");
                         ra1.setVisibility(View.INVISIBLE);
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         if(increment == 1)
                         {
-                            btnNext.setText("Question " + (increment + 1));
+                            btnNext.setText("Goto Question " + (increment + 1));
                             display();
                         }
                         else {
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                             {
                             number += 0;
                             }
-                            btnNext.setText("Question " + (increment + 1));
+                            btnNext.setText("Goto Question " + (increment + 1));
                             display();
                         }
                     }
@@ -120,12 +121,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
 /////////yeha tak ke hamra kam sirf question ke button pe hwa hai...
-        btnResult = (Button)findViewById(R.id.result);
         btnResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this,result.class);
+                i.putExtra("number",number);
                 startActivity(i);
             }
         });
@@ -159,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
         return returnInt;
     }
 
-
     public void display()
     {
         index = 0;
@@ -187,6 +188,4 @@ public class MainActivity extends AppCompatActivity {
         r3.setText("");
         r3.setText(quesQuiz[3]);
     }
-
-
 }

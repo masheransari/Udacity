@@ -1,8 +1,11 @@
 package com.example.asheransari.quiz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class result extends AppCompatActivity {
 
@@ -10,11 +13,24 @@ public class result extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-
-
+        int tempNumber=0;
 
         ImageView imageView = (ImageView)findViewById(R.id.imageView);
-        imageView.setImageResource(R.drawable.congratulations);
+        Intent recieve = getIntent();
+        tempNumber = recieve.getIntExtra("number",0);
+        String TempStatus = status(tempNumber);
+        TextView t1 = (TextView)findViewById(R.id.textStatus);
+        if (tempNumber>=40)
+        {
+            imageView.setImageResource(R.drawable.congratulations);
+            t1.setText("You Have Passed..\n"+TempStatus);
+        }
+        else
+        {
+            imageView.setImageResource(R.drawable.fail);
+            t1.setText(TempStatus);
+        }
+
     }
 
 
@@ -25,41 +41,41 @@ public class result extends AppCompatActivity {
         {
             data= "Excellent Job";
         }
-        if (limit==90)
+        else if (limit==90)
         {
             data= "Excellent Job";
         }
-        if (limit==80)
+        else if (limit==80)
         {
-            data= "Well done Job";
+            data= "Well Done Job";
         }
-        if (limit==70)
-        {
-            data= "Good Job";
-        }
-        if (limit==60)
+        else if (limit==70)
         {
             data= "Good Job";
         }
-        if (limit==50)
+        else if (limit==60)
+        {
+            data= "Good Job";
+        }
+        else if (limit==50)
         {
             data= "Fair Job";
         }
-        if (limit==40)
+        else if (limit==40)
         {
-            data= "Satisfactory Job";
+            data= "Promoted\nBut Try To Give Our Best In Future";
         }
-        if (limit==30)
+        else if (limit==30)
         {
-            data= "Soory!! you are failed..!!";
+            data= "Soory!! You Are Failed..!!";
         }
-        if (limit==20)
+        else if (limit==20)
         {
-            data= "Try to working Hard in Android..!!";
+            data= "Try To Working Hard In Android..!!\nYou Are Fail...";
         }
-        if (limit==10)
+        else if (limit==10 || limit==0)
         {
-            data= "No Argsuments..!!";
+            data= "No Argsuments..!!\nYou Are Fail...";
         }
         else
         {
