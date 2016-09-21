@@ -33,13 +33,13 @@ public class EarthquakeActivity extends AppCompatActivity {
 
         // Create a fake list of earthquake locations.
        final ArrayList<variablesClass> earthquakes = new ArrayList<variablesClass>();
-        earthquakes.add(new variablesClass(7.2,"San Francisco","Feb 20,2016"));
-        earthquakes.add(new variablesClass(6.1,"London","Mar 15,2015"));
-        earthquakes.add(new variablesClass(3.9,"Tokyo","Sep 20,2014"));
-        earthquakes.add(new variablesClass(5.4,"Mexico City","Aug 5,2014"));
-        earthquakes.add(new variablesClass(2.8,"Moscow","Jan 14,2013"));
-        earthquakes.add(new variablesClass(4.9,"Rio de Janeiro","Nov 28,2012"));
-        earthquakes.add(new variablesClass(1.6,"Paris","Oct 30,2011"));
+        earthquakes.add(new variablesClass(7.2,"San Francisco","Feb 20, 2016"));
+        earthquakes.add(new variablesClass(6.1,"London","Mar 15, 2015"));
+        earthquakes.add(new variablesClass(3.9,"Tokyo","Sep 20, 2014"));
+        earthquakes.add(new variablesClass(5.4,"Mexico City","Aug 5, 2014"));
+        earthquakes.add(new variablesClass(2.8,"Moscow","Jan 14, 2013"));
+        earthquakes.add(new variablesClass(4.9,"Rio de Janeiro","Nov 28, 2012"));
+        earthquakes.add(new variablesClass(1.6,"Paris","Oct 30, 2011"));
 
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView = (ListView) findViewById(R.id.list);
