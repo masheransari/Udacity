@@ -5,17 +5,17 @@ package com.example.android.quakereport;
  */
 public class variablesClass {
 
-    private double magnitude;
+    private String magnitude;
     private String date;
     private String place;
-    public variablesClass(double mag, String plac, String dateA)
+    public variablesClass(String mag, String plac, String dateA)
     {
         magnitude = mag;
         place = plac;
         date = dateA;
     }
 
-    public double getMagnitude() {
+    public String getMagnitude() {
         return magnitude;
     }
 
