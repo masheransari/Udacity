@@ -9,14 +9,14 @@ public class Customclass {
 
     private String place;
 
-    private String time;
+    private long time;
 
 
-    public Customclass(final double magnitude, final String place, final String time){
+
+    public Customclass(final double magnitude, final String place, final long time){
         this.magnitude = magnitude;
         this.place = place;
         this.time = time;
-
     }
 
     public double getMagnitude() {
@@ -27,7 +27,7 @@ public class Customclass {
         return place;
     }
 
-    public String getTime() {
+    public long getTime() {
         return time;
     }
 

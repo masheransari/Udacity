@@ -64,11 +64,8 @@ public final class Queryutil{
                     String place = properties.getString("place");
 
                     long TimesInMillsSeconds = properties.getLong("time");
-                    Date dateObject = new Date(TimesInMillsSeconds);
 
-                    ////date format apka upar bana hwa hai....
-                    String dateToDisplay = dateFormat.format(dateObject);
-                    Customclass object = new Customclass(mag,place,dateToDisplay);
+                    Customclass object = new Customclass(mag,place,TimesInMillsSeconds);
 
                     earthquakes.add(object);
                 }

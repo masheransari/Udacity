@@ -36,16 +36,57 @@ CustomAdapter(Activity activity,ArrayList<Customclass> arrayAdapter){
 
         TextView place = (TextView) listitemview.findViewById(R.id.place);
 
-        place.setText(""+currentlist.getPlace());
+        place.setText(currentlist.getPlace());
 
 //        long timesInMillisSecond = currentlist.getTime();
 //        Date dateObject = new Date(timesInMillisSecond);
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM DD, YYYY");
 //        String dateToDisplay = dateFormat.format(dateObject);
 //        date.setText(dateToDisplay);
-        TextView date = (TextView) listitemview.findViewById(R.id.date);
-        date.setText(""+currentlist.getTime());
+
+
+//        Date dateObject = new Date(currentlist.getTime());
+//
+//        TextView mdate = (TextView) listitemview.findViewById(R.id.date);
+//
+//        String formattedDate =formateDate(dateObject);
+//        mdate.setText(formattedDate);
+//
+//        TextView mTime = (TextView) listitemview.findViewById(R.id.time);
+//
+//        String formattedTime = formatTime(dateObject);
+//        mTime.setText(formattedTime);
+
+//        Date dateobject = new Date(currentlist.getTime());
+//
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, YYYY" );
+//        String formattedDate = dateFormat.format(dateobject);
+
+
+
+//        String [] dat = formattedDate.split("_");
+//        date.setText(dat[0]);
+//        time.setText(dat[1]);
+
+
+
         return listitemview;
+    }
+
+
+    private String formateDate(Date dateObject)
+    {
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, YYYY_h:mm a");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, YYYY");
+        String a = dateFormat.format(dateObject);
+        return a;
+    }
+
+    private String formatTime(Date dateObject)
+    {
+        SimpleDateFormat TimeFormat = new SimpleDateFormat("h:mm a");
+        String a = TimeFormat.format(dateObject);
+        return a;
     }
 }
 

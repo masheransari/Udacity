@@ -13,9 +13,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ArrayList<Customclass> arrayList = Queryutil.extractEarthquakes();
+
         ListView listView = (ListView) findViewById(R.id.list);
+
         CustomAdapter customAdapter = new CustomAdapter(this,arrayList);
+
         listView.setAdapter(customAdapter);
     }
 }
