@@ -1,6 +1,7 @@
 package com.example.android.quakereport;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,17 +47,17 @@ public final class QueryUtils {
         {
 
             JSONObject baseJsonEarthQuake = new JSONObject(SAMPLE_JSON_RESPONSE);
-            JSONObject earthQuakeArray = baseJsonEarthQuake.getJSONObject("feature");
-            for (int i=0; i<earthQuakeArray.length();i++)
+            JSONArray earthQuakeArray = baseJsonEarthQuake.getJSONArray("feature");
+            for (int i=0; i< earthQuakeArray.length(); i++)
             {
-                JSONObject CurrentEarthQuake = earthQuakeArray.getJSONObject(String.valueOf(i));
-                JSONObject properties = CurrentEarthQuake.getJSONObject("properties");
+                final JSONObject CurrenJsonObject = earthQuakeArray.getJSONObject(i);
+                JSONObject properties = CurrenJsonObject.getJSONObject("properties");
                 String magnitude = properties.getString("mag");
                 String location = properties.getString("place");
                 String time = properties.getString("time");
-
                 variablesClass variablesClass = new variablesClass(magnitude,location,time);
                 earthquakes.add(variablesClass);
+//                Toast.makeText(null, magnitude+" place ,"+location+"time,"+time, Toast.LENGTH_SHORT).show();
             }
         }
         catch(JSONException e)
