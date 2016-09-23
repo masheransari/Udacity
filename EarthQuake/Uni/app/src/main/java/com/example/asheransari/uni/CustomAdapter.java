@@ -38,6 +38,19 @@ CustomAdapter(Activity activity,ArrayList<Customclass> arrayAdapter){
 
         place.setText(currentlist.getPlace());
 
+        TextView date = (TextView) listitemview.findViewById(R.id.date);
+
+        Date dateobject = new Date(currentlist.getTime());
+
+        String formatteddate = formateDate(dateobject);
+        date.setText(formatteddate);
+
+        TextView time = (TextView) listitemview.findViewById(R.id.time);
+
+        String formattedtime = formatTime(dateobject);
+
+        time.setText(formatteddate);
+
 //        long timesInMillisSecond = currentlist.getTime();
 //        Date dateObject = new Date(timesInMillisSecond);
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM DD, YYYY");
@@ -73,13 +86,13 @@ CustomAdapter(Activity activity,ArrayList<Customclass> arrayAdapter){
         return listitemview;
     }
 
-
+//Error is Capital YYYY in simpledateformat
+    // now fix it for small cap.
     private String formateDate(Date dateObject)
     {
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, YYYY_h:mm a");
-        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, YYYY");
-        String a = dateFormat.format(dateObject);
-        return a;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy");
+        return dateFormat.format(dateObject);
     }
 
     private String formatTime(Date dateObject)

@@ -65,7 +65,7 @@ public final class QueryUtils {
                 String magnitude = properties.getString("mag");
                 String location = properties.getString("place");
                 String time = properties.getString("time");
-                Earthquake earthquake= new Earthquake(magnitude,location,time);
+                Earthquake earthquake = new Earthquake(magnitude,location,time);
                 earthquakes.add(earthquake);
 //                Toast.makeText(null, magnitude+" place ,"+location+"time,"+time, Toast.LENGTH_SHORT).show();
             }
