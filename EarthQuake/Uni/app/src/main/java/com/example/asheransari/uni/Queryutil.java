@@ -65,6 +65,10 @@ public final class Queryutil{
 
                     long TimesInMillsSeconds = properties.getLong("time");
 
+                    Date dateobject = new Date(TimesInMillsSeconds);
+
+
+
                     Customclass object = new Customclass(mag,place,TimesInMillsSeconds);
 
                     earthquakes.add(object);
