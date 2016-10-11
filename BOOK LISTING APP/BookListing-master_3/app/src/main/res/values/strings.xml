@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BookListing_3</string>
+    <string name="search_button">search</string>
+    <string name="search_hint">Search in books</string>
+    <string name="network_not_reachable">Network not reachable.</string>
+    <string name="error_parsing_message">Error parsing response.</string>
+    <string name="no_results_message">No results found.</string>
+    <string name="no_items_message">Enter a search term to find books!</string>
+</resources>

@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".BookListFragment">
+
+    <EditText
+        android:id="@+id/text_search_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_enter_book_keyword"
+        android:imeOptions="actionSearch"
+        android:inputType="textNoSuggestions"
+        android:layout_margin="@dimen/text_search_book_margin" />
+
+    <ListView
+        android:id="@+id/list_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_empty_books"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/text_empty_books" />
+
+</LinearLayout>

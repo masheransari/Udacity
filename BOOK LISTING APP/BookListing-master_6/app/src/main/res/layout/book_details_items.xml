@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/book_details_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/book_image"
+            android:layout_width="64sp"
+            android:layout_height="96sp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                tools:text="book's title" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/author" />
+
+                <TextView
+                    android:id="@+id/author_book"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="book's author" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/publishedBy" />
+
+                <TextView
+                    android:id="@+id/publisher_book"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="book's publisher" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pages" />
+
+                <TextView
+                    android:id="@+id/page_count_book"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="book's pageCount" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/description_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="book's description" />
+
+    <RatingBar
+        android:id="@+id/ratings_book"
+        style="@style/customRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="0.01"
+        android:stepSize="0.1" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/publishedOn" />
+
+        <TextView
+            android:id="@+id/publication_date_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="book's publication date" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/isbn_type_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="book's isbn type" />
+
+        <TextView
+            android:id="@+id/isbn_value_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="book's isbn value" />
+    </LinearLayout>
+
+</LinearLayout>

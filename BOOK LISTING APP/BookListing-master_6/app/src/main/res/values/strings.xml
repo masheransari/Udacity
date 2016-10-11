@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BookListing_6</string>
+    <string name="author">Author :</string>
+    <string name="publishedBy">Published by :</string>
+    <string name="pages">Pages :</string>
+    <string name="description">Description</string>
+    <string name="publishedOn">Published on :</string>
+    <string name="hello">MainActivity</string>
+    <string name="exit">Exit</string>
+    <string name="email">EMail</string>
+</resources>

@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             tools:context="com.developer.jc.booklisting.SearchFragment">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/empty_text_view"
+            android:id="@+id/emptyTextView"
+            android:paddingTop="@dimen/padding_empty_text_view_top"
+            android:paddingLeft="@dimen/padding_empty_text_view_left"
+            android:gravity="center"/>
+
+</LinearLayout>
