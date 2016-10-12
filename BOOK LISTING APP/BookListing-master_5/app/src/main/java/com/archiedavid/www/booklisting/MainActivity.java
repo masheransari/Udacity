@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.v(LOG_TAG, "in oncreate()");
         setContentView(R.layout.activity_main);
+
         if(savedInstanceState == null || !savedInstanceState.containsKey("keyBookList")) {
             booksList = new ArrayList<>();
         }
