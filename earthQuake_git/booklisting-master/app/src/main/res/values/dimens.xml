@@ -1,0 +1,43 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="app_bar_layout_height">200dp</dimen>
+    <dimen name="collapsing_toolbar_expanded_title_margin_start">24dp</dimen>
+    <dimen name="collapsing_toolbar_expanded_title_margin_end">64dp</dimen>
+    <dimen name="app_bar_elevation">4dp</dimen>
+
+    <!-- SearchView -->
+    <dimen name="search_view_max_width">228dp</dimen>
+
+    <!-- Main Activity Divider Line -->
+    <dimen name="main_activity_divider_line_height">1dp</dimen>
+
+    <!-- Book List -->
+    <dimen name="book_list_item_height">80dp</dimen>
+
+    <!-- Text Margins -->
+    <dimen name="book_title_item_margin">8dp</dimen>
+    <dimen name="book_authors_item_margin">4dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="book_title_item_text_size">20sp</dimen>
+    <dimen name="book_authors_item_text_size">12sp</dimen>
+
+    <!-- Text lines -->
+    <integer name="book_title_item_max_lines">1</integer>
+    <integer name="book_title_item_max_length">100</integer>
+    <integer name="book_authors_item_max_lines">2</integer>
+    <integer name="book_authors_item_max_length">50</integer>
+
+    <!-- Http connection values -->
+    <integer name="http_read_timeout">10000</integer>
+    <integer name="http_connect_timeout">15000</integer>
+
+    <!-- FAB -->
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="fab_press_translation_z">12dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+
+</resources>

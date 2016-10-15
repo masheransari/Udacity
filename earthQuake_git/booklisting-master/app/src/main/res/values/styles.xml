@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="TextBase">
+        <item name="android:layout_margin">@dimen/book_title_item_margin</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="bookItemTitleBase" parent="TextBase">
+        <item name="color">@color/colorPrimaryText</item>
+        <item name="android:textSize">@dimen/book_title_item_text_size</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="bookItemAuthorsBase" parent="TextBase">
+        <item name="color">@color/colorSecondaryText</item>
+        <item name="android:textSize">@dimen/book_authors_item_text_size</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Book Listing App</string>
+    <string name="default_textview_text">Enter book title in above search box and click \'Search\' button.</string>
+</resources>
