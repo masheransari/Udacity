@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Business Card</string>
+    <string name="intro">Welcome to  Androidian Logics</string>
+    <string name="name">Name</string>
+    <string name="hintName">Please Enter Your Name</string>
+    <string name="designation">Designation</string>
+    <string name="hintDesig">Please Enter Your Designation</string>
+    <string name="email">Email</string>
+    <string name="hintemail">Please Enter Your Email</string>
+    <string name="number">Number</string>.
+    <string name="hintNum">Please Enter Your Number</string>
+    <string name="buttonText">Generate Card</string>
+    <string name="detail">Our Aim Is To Give\nGoogle developed Android as a software platform and an operating system built on Linux kernel version 2.6 for mobile devices using Java Libraries. Android is owned by Google and Open Handset Alliance, a conglomerate of several IT and Telecom companies to develop open standards for mobile devices.
+</string>
+    <string name="ToastMsgElse">Please Fill The All Field\'s First..!!</string>
+    <string name="nameCard">Androidian logics</string>
+    <string name="address">House Number 2, Block 12, B Area Liaquatabad Karachi, Pakistan\nKarachi 75900</string>
+    <string name="UanNumber">111-AND-ROID Ext.</string>
+    <string name="pabxNumber">PABX: 35-AN-DROI-D</string>
+    <string name="FaxNumber">Fax: +92 21 3AND ROID</string>
+</resources>

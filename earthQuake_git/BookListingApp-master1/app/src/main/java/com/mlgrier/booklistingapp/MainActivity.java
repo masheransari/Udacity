@@ -157,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (MalformedURLException e) {
                 Log.e(LOG_TAG, "Error Creating URL", e);
             }
+Log.e("MainActivity","JsonLink = "+completeUrl);
 
             return url;
         }
