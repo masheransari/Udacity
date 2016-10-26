@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">OKC Tour Guide</string>
+
+        <!-- Category name for phrases [CHAR LIMIT=20] -->
+        <string name="category_events">Festivals and Events</string>
+
+        <!-- Category name for the vocabulary words for colors [CHAR LIMIT=20] -->
+        <string name="category_casinos">Nightlife and Casinos</string>
+
+        <!-- Category name for the vocabulary words for numbers [CHAR LIMIT=20] -->
+        <string name="category_family">Family Activities</string>
+
+        <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
+        <string name="category_nature">Nature and Outdoors</string>
+
+</resources>

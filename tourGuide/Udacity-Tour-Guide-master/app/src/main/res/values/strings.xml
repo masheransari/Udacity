@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Udacity Calgary Tour Guide</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="glenbowname">Glenbow Museum</string>
+    <string name="glenbowaddress">130 9 Ave SE</string>
+    <string name="aerospacename">Aerospace Museum</string>
+    <string name="aerospaceaddress">4629 McCall Way NE</string>
+    <string name="telusname">Telus Spark</string>
+    <string name="telusaddress">220 St. George\'s Drive NE</string>
+    <string name="hallname">Canada\'s Sports Hall of Fame</string>
+    <string name="halladdress">169 Canada Olympic Road NW</string>
+    <string name="calgaryTowerName">Calgary Tower</string>
+    <string name="calgaryTowerAddress">101 9 Ave SW</string>
+    <string name="culturalCtName">Chinese Cultural Centre</string>
+    <string name="culturalCtAddress">197 1 St SW</string>
+    <string name="princeParkName">Prince\'s Island Park</string>
+    <string name="princeParkAddress">100 2 St SW</string>
+    <string name="stephenAveName">Stephen Avenue</string>
+    <string name="stephenaveaddress">8 Ave SW</string>
+    <string name="stampedeName">Calgary Stampede</string>
+    <string name="stampedeAddress">1410 Olympic Way SE</string>
+    <string name="marketMallName">Market Mall</string>
+    <string name="marketMallAddress">3625 Shaganappi Trail NW</string>
+    <string name="marlMallName">Marlborough Mall\t</string>
+    <string name="marlMallAddress">433 Marlborough Way NE</string>
+    <string name="southCentreMallName">Southcentre Mall</string>
+    <string name="southCentreMallAddress">100 Anderson Rd SE</string>
+    <string name="chinookName">Chinook Centre</string>
+    <string name="chinookAddress">6455 Macleod Trail SW</string>
+    <string name="attractionsTV">Attractions</string>
+    <string name="attractionsTab">Attractions</string>
+    <string name="shoppingsTab">Shopping</string>
+    <string name="nameTV">Name</string>
+    <string name="locationText">Location</string>
+</resources>

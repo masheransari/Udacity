@@ -46,7 +46,7 @@ private MediaPlayer.OnCompletionListener onCompletionListener = (new MediaPlayer
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
-//        getActionBar().setDisplayHomeAsUpEnabled(true);
+
     final ArrayList<variableClass> variableClasses =  new ArrayList<variableClass>();
 
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);

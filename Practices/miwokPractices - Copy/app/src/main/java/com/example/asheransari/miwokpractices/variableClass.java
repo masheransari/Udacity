@@ -33,7 +33,6 @@ public class variableClass {
 
     public variableClass(String Defaultranslation, String MiwokTranslation, int AudioResourceID){
         mDefaultranslation = Defaultranslation;
-
         mMiwokTranslation = MiwokTranslation;
         mAudioResourceID = AudioResourceID;
     }

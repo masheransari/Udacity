@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mlgrier.okctourguide.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/category_events"
+        android:id="@+id/eventsBtn"
+        style="@style/CategoryStyle"
+        android:background="@color/categoryEvents"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/category_casinos"
+        android:id="@+id/casinosBtn"
+        style="@style/CategoryStyle"
+        android:background="@color/categoryCasinos"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/category_family"
+        android:id="@+id/familyBtn"
+        style="@style/CategoryStyle"
+        android:background="@color/categoryFamily"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/category_nature"
+        android:id="@+id/natureBtn"
+        style="@style/CategoryStyle"
+        android:background="@color/categoryNature"/>
+</LinearLayout>
