@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Pet Lesson 3</string>
+
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+
+    <string name="action_delete_all_entries">Delete All Pets</string>
+
+    <string name="editor_activity_title_new_pet">Add a Pet</string>
+
+    <string name="action_save">Save</string>
+
+    <string name="action_delete">Delete</string>
+
+    <string name="category_overview">Overview</string>
+
+    <string name="category_gender">Gender</string>
+
+    <string name="category_measurement">Measurement</string>
+
+    <string name="hint_pet_name">Name</string>
+
+    <string name="hint_pet_breed">Breed</string>
+
+    <string name="hint_pet_weight">Weight</string>
+
+    <string name="unit_pet_weight">kg</string>
+
+    <string name="gender_unknown">Unknown</string>
+
+    <string name="gender_male">Male</string>
+
+    <string name="gender_female">Female</string>
+
+</resources>

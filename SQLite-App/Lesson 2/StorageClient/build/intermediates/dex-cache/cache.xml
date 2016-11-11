@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.1.1_363bb5ae4735029e1255d2c9c1b608eb58d10ea1.jar" />
+    </item>
+    <item
+        jar="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="4add8aa95c9f4e9a2ad64b7e2bf08e97e28955c1">
+        <dex dex="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-24.1.1_5dc9f274be209946da0bca2ea66fd5c64384ff17.jar" />
+    </item>
+    <item
+        jar="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="327f68d58bb39fb8b585150596b313541f8fdb87">
+        <dex dex="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\pre-dexed\debug\com.android.support-support-v13-24.1.1_8a505e13faf39d8971c2ba0e3407eafec1daaf46.jar" />
+    </item>
+    <item
+        jar="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="87ee4d8c31a90f193d3aca9e7ce2d054d2fcc02d">
+        <dex dex="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\pre-dexed\debug\instant-run_9fa82bb7853921e67ab883d04b8893984763ca60.jar" />
+    </item>
+    <item
+        jar="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.1.1_9d0c470afbbbd62f9447f9ae75e25769c1e08f5c.jar" />
+    </item>
+    <item
+        jar="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="ca74722504f90166103d01edcdfdb93192eb1cba">
+        <dex dex="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\pre-dexed\debug\internal_impl-24.1.1_86cae7a4f2af84cdffd3d0a10fce8ee47930d905.jar" />
+    </item>
+    <item
+        jar="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\pre-dexed\debug\internal_impl-24.1.1_1f147fe0222017fbef10f259e6cf8e27eae14182.jar" />
+    </item>
+    <item
+        jar="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.1.1_5f175fc4442a2a11f2937e70088f5078245b35e5.jar" />
+    </item>
+    <item
+        jar="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="1dcfbce04a0ce85641ab43b82ea170a24a3383a4">
+        <dex dex="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\pre-dexed\debug\instant-run-bootstrap_1875eb498189925e298adedf7c92b6b8980b594a.jar" />
+    </item>
+    <item
+        jar="C:\Users\asher.ansari\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\pre-dexed\debug\support-annotations-24.1.1_a1d3416271eb18662925dbb1d24df51be3498ad4.jar" />
+    </item>
+    <item
+        jar="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.1.1_dcb734d2e09941dc35e67d1ebe5331a63b21430b.jar" />
+    </item>
+
+</items>

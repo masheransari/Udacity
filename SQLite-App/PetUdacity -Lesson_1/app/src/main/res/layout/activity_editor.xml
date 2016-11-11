@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context="com.example.asheransari.petudacity.Editor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/overView"
+            style="@style/categoryStyle"/>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edit_pet_name"
+                android:hint="@string/nameHint"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle"/>
+            <EditText android:id="@+id/edit_per_breed"
+                android:hint="@string/breedHint"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/container_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/genderHint"
+            style="@style/categoryStyle"/>
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="2"
+    android:orientation="vertical">
+
+    <Spinner android:id="@+id/spinner_gender"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingRight="16dp"
+        android:spinnerMode="dropdown"
+        />
+        </LinearLayout>
+    </LinearLayout>
+<LinearLayout
+    android:id="@+id/container_measurment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:text="@string/measurmentHint"
+        style="@style/categoryStyle"/>
+<RelativeLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="2"
+    android:paddingLeft="4dp">
+
+    <EditText
+        android:id="@+id/edit_pet_weight"
+        android:hint="@string/weightHint"
+        android:inputType="number"
+        style="@style/EditorFieldStyle" />
+
+    <TextView
+        android:id="@+id/label_weight_units"
+        android:text="Kg"
+        style="@style/EditorUnitsStyle"/>
+</RelativeLayout>
+
+</LinearLayout>
+
+</LinearLayout>
+

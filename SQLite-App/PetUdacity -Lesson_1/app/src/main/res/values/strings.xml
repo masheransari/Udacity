@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Pet Udacity</string>
+    <string name="overView">Overview</string>
+    <string name="nameHint">Name</string>
+    <string name="breedHint">Breed</string>
+    <string name="genderHint">Gender</string>
+    <string name="measurmentHint">Measurment</string>
+    <string name="weightHint">Weight</string>
+    <string name="saveText">Save</string>
+    <string name="deleteHint">Delete</string>
+    <string name="insert_dummy_data">Insert Dummy Data</string>
+    <string name="action_delete_all_pets">Delete All Pets</string>
+    <string name="gender_unknown">Unknown</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+</resources>

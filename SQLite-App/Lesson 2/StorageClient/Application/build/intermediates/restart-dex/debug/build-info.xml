@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="19"
+    density="xxxhdpi"
+    format="7"
+    timestamp="1450918894942"
+    token="2266348096697369979" >
+
+    <task
+        name="javac"
+        duration="6279" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="1645" />
+    <task
+        name="verifier"
+        duration="174" />
+
+    <artifact
+        location="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\outputs\apk\Application-debug.apk"
+        type="MAIN" />
+
+    <build timestamp="1450918894942" >
+        <artifact
+            location="E:\Asher\Projects\android\Udacity\SQLite-App\Lesson 2\StorageClient\Application\build\outputs\apk\Application-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>
