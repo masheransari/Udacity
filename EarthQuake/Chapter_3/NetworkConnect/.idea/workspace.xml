@@ -23,8 +23,6 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Application" factoryName="Application">
@@ -115,9 +113,9 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <created>1475596960210</created>
+      <created>1479717330138</created>
       <option name="number" value="Default" />
-      <updated>1475596960210</updated>
+      <updated>1479717330138</updated>
     </task>
     <servers />
   </component>

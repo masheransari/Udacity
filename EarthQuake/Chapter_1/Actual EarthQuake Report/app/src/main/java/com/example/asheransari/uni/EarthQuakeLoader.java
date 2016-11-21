@@ -17,6 +17,7 @@ public class EarthQuakeLoader extends AsyncTaskLoader<List<Customclass>>{
     public EarthQuakeLoader(Context context, String url) {
         super(context);
         mUrl = url;
+
         Log.i(LOG_TAG, "In EarthQuakeLoader called....");
     }
 
