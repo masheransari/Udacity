@@ -1,9 +1,9 @@
 package com.example.asheransari.inventoryapp;
 
-import android.app.LoaderManager;
+import android.content.ContentValues;
 import android.content.Intent;
-import android.content.Loader;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,27 +13,102 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.asheransari.inventoryapp.data.InventoryCursorAdapter;
 import com.example.asheransari.inventoryapp.data.InventoryDbHelper;
+import com.example.asheransari.inventoryapp.data.inventoryContract;
+import com.example.asheransari.inventoryapp.tempFolder.displayIndivual;
+import com.example.asheransari.inventoryapp.tempFolder.itemNew;
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity{
 
     private InventoryDbHelper mInventoryDbHelper;
+    InventoryCursorAdapter mCursorAdapter;
+    inventoryContract mInventoryContract;
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mInventoryDbHelper = new InventoryDbHelper(this);
-//        mInventoryDbHelper.
-        ListView listView = (ListView)findViewById(R.id.list);
-
+//        SQLiteDatabase db = mInventoryDbHelper.getWritableDatabase();
+        listView = (ListView)findViewById(R.id.list);
         View emptyVew = findViewById(R.id.empty_view);
         listView.setEmptyView(emptyVew);
 
+        displayDatabaseInfo();
+
+//        Cursor cursor = displayDatabaseInfo();
+//        mCursorAdapter = new InventoryCursorAdapter(this, cursor);
 
         Toast.makeText(MainActivity.this,"Null",Toast.LENGTH_LONG).show();
-
     }
 
+
+    private void insertDb()
+    {
+        SQLiteDatabase db = mInventoryDbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(inventoryContract.COLUMN_DETAILS_PRODUCT_NAME, "HandFree");
+        values.put(inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE, "Samsung");
+        values.put(inventoryContract.COLUMN_DETAILS_QUANTITY, 50);
+        values.put(inventoryContract.COLUMN_DETAILS_RS, 120);
+
+        db.insert(inventoryContract.TABLE_NAME, null, values);
+//        Uri uri = getContentResolver().insert(inventoryContract.TABLE_NAME, values);
+
+    }
+    private void displayDatabaseInfo()
+    {
+        ArrayList<variableClass> arrayList = new ArrayList<variableClass>();
+//        InventoryDbHelper inventoryDbHelper = new InventoryDbHelper(this);
+        SQLiteDatabase db = mInventoryDbHelper.getReadableDatabase();
+
+//        Cursor cursor = db.rawQuery("SELECT "+mInventoryContract.COLUMN_DETAILS_PRODUCT_NAME +","+mInventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE+ ","+mInventoryContract.COLUMN_DETAILS_STOCK+","+mInventoryContract.COLUMN_DETAILS_RS +" FROM "+mInventoryContract.TABLE_NAME, null);
+
+        String[] projection = {
+                mInventoryContract.COLUMN_DETAILS_PRODUCT_NAME,
+                mInventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE,
+                mInventoryContract.COLUMN_DETAILS_QUANTITY,
+                mInventoryContract.COLUMN_DETAILS_RS
+        };
+        Cursor cursor = db.query(
+            mInventoryContract.TABLE_NAME,
+                projection, null,null,null,null,null
+        );
+        inventoryAdapter inventoryAdapter;
+
+        try
+        {
+            int pNameColumn = cursor.getColumnIndex(inventoryContract.COLUMN_DETAILS_PRODUCT_NAME);
+            int mNameColumn = cursor.getColumnIndex(inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE);
+            int mQuantity = cursor.getColumnIndex(inventoryContract.COLUMN_DETAILS_QUANTITY);
+            int mRs = cursor.getColumnIndex(inventoryContract.COLUMN_DETAILS_RS);
+
+            while(cursor.moveToNext())
+            {
+                String name = cursor.getString(pNameColumn);
+                String Mname = cursor.getString(mNameColumn);
+//                Toast.makeText(MainActivity.this,"Here 1",Toast.LENGTH_SHORT).show();
+                int quantity = cursor.getInt(mQuantity);
+                int mRupees = cursor.getInt(mRs);
+//                Toast.makeText(MainActivity.this,"Here 2",Toast.LENGTH_SHORT).show();
+
+                arrayList.add(new variableClass(name, Mname,quantity,mRupees));
+
+            }
+            inventoryAdapter = new inventoryAdapter(this,arrayList);
+
+            listView.setAdapter(inventoryAdapter);
+        }
+        finally {
+                cursor.close();
+        }
+
+//        mCursorAdapter = new InventoryCursorAdapter(this, cursor);
+//        listView.setAdapter(mCursorAdapter);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main_activity_insert, menu);
@@ -45,8 +120,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         switch (menuItem.getItemId())
         {
             case R.id.insert_button:
-                Intent i = new Intent(MainActivity.this, insert.class);
-                startActivity(i);
+                insertDb();
+//                Intent i = new Intent(MainActivity.this, insert.class);
+//                startActivity(i);
                 return true;
             case R.id.insert_item_only:
                 Intent ia = new Intent(MainActivity.this, itemNew.class);
@@ -63,18 +139,18 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         return super.onOptionsItemSelected(menuItem);
     }
 
-    @Override
-    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        return null;
-    }
-
-    @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
-
-    }
-
-    @Override
-    public void onLoaderReset(Loader<Cursor> loader) {
-
-    }
+//    @Override
+//    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+//        return null;
+//    }
+//
+//    @Override
+//    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+//
+//    }
+//
+//    @Override
+//    public void onLoaderReset(Loader<Cursor> loader) {
+//
+//    }
 }

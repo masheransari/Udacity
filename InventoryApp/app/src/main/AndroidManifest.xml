@@ -15,9 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".insert" />
-        <activity android:name=".displayIndivual" />
-        <activity android:name=".itemNew"></activity>
+        <activity android:name=".tempFolder.insert" />
+        <activity android:name=".tempFolder.displayIndivual" />
+        <activity android:name=".tempFolder.itemNew"></activity>
     </application>
 
 </manifest>

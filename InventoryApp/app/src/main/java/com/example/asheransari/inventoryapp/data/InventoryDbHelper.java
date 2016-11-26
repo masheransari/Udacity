@@ -17,27 +17,30 @@ public class InventoryDbHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
 
+    private static final String SQL_CREATE_DETAILS_TABLE = "CREATE TABLE "+ inventoryContract.TABLE_NAME + " ("
+            + inventoryContract._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + inventoryContract.COLUMN_DETAILS_PRODUCT_NAME + " TEXT NOT NULL, "
+            + inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE + " TEXT NOT NULL, "
+            + inventoryContract.COLUMN_DETAILS_QUANTITY + " INTEGER NOT NULL, "
+            + inventoryContract.COLUMN_DETAILS_RS + " INTEGER NOT NULL DEFAULT 0 "+");";
+
     public InventoryDbHelper(Context context)
     {
-        super(context,DATABASE_NAME,null,DATABASE_VERSION);
-        this.mContext = context;
+        super(context ,DATABASE_NAME ,null ,DATABASE_VERSION );
+//        Toast.makeText(context, "In inventoryDbHelper Class",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String SQL_CREATE_DETAILS_TABLE = "CREATE TABLE IF NOT EXISTS "+ inventoryContract.TABLE_NAME + " ("
-                + inventoryContract._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + inventoryContract.COLUMN_DETAILS_PRODUCT_NAME + " TEXT NOT NULL, "
-                + inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE + " TEXT NOT NULL, "
-                + inventoryContract.COLUMN_DETAILS_QUANTITY + " INTEGER NOT NULL, "
-                + inventoryContract.COLUMN_DETAILS_STOCK + " INTEGER NOT NULL, "
-                + inventoryContract.COLUMN_DETAILS_RS + " INTEGER NOT NULL DEFAULT 0);";
         sqLiteDatabase.execSQL(SQL_CREATE_DETAILS_TABLE);
-        Toast.makeText(null, "Database Created", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(null, "Database Created", Toast.LENGTH_SHORT).show();
+//        onCreate(sqLiteDatabase);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-
+//        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+inventoryContract.TABLE_NAME);
+        onCreate(sqLiteDatabase);
     }
 }

@@ -18,8 +18,10 @@ public class inventoryContract implements BaseColumns {
 
     public final static String COLUMN_DETAILS_QUANTITY = "quantity";
 
-    public final static String COLUMN_DETAILS_STOCK = "stock";
-
     public final static String COLUMN_DETAILS_RS = "rs";
 
+//    private inventoryContract(String name, String mName, int quantity, int price)
+//    {
+//        this.N
+//    }
 }
