@@ -1,6 +1,8 @@
 package com.example.asheransari.inventoryapp;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,18 +14,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.asheransari.inventoryapp.R;
-
-import org.w3c.dom.Text;
+import com.example.asheransari.inventoryapp.*;
+import com.example.asheransari.inventoryapp.data.table_details.inventoryContract;
+import com.example.asheransari.inventoryapp.data.InventoryDbHelper;
 
 public class displayIndivual extends AppCompatActivity {
 
     TextView pNameTxt_data, mNameTxt_data, quantityTxt,quantityMain;
     EditText total_rs_data,quatity_editText;
     Button btnPlus, btnMinus;
+    private InventoryDbHelper mInventoryDbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_indivual);
+        mInventoryDbHelper = new InventoryDbHelper(this);
 
         Intent i = getIntent();
         String PName = i.getStringExtra("PName");
@@ -41,7 +46,7 @@ public class displayIndivual extends AppCompatActivity {
 
         quantityMain.setText("Current Quantity = "+MStock);
         pNameTxt_data = (TextView)findViewById(R.id.pName_display_data);
-        pNameTxt_data.setText(""+PName);
+        pNameTxt_data.setText(PName);
 
         mNameTxt_data = (TextView)findViewById(R.id.mName_display_data);
         mNameTxt_data.setText(""+MName);
@@ -69,8 +74,39 @@ public class displayIndivual extends AppCompatActivity {
         });
     }
 
+public void savedDataOnDatabase()
+{
+    String pName = pNameTxt_data.getText().toString();
+    String mName = mNameTxt_data.getText().toString();
+    String pquantity = quantityTxt.getText().toString();
+    String pRs = total_rs_data.getText().toString();
 
+    SQLiteDatabase db = mInventoryDbHelper.getWritableDatabase();
 
+    if (pName.equals("")||pName.equals(" ") || mName.equals(" ")||mName.equals("")|| pquantity.equals("")||pquantity.equals(" ")||pRs.equals("")|| pRs.equals(" ")) {
+        Toast.makeText(displayIndivual.this, "Please Fill All The Information Correctly..!!", Toast.LENGTH_SHORT).show();
+    }
+    else {
+        ContentValues values = new ContentValues();
+        values.put(inventoryContract.COLUMN_DETAILS_RS, Integer.valueOf(pRs));
+        values.put(inventoryContract.COLUMN_DETAILS_QUANTITY, Integer.valueOf(pquantity));
+//    db.update(inventoryContract.TABLE_NAME,values,inventoryContract.COLUMN_DETAILS_PRODUCT_NAME+"="+pName+ " AND "+inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE +" = "+mName,null);
+//    db.rawQuery("UPDATE "+inventoryContract.TABLE_NAME + " SET "+inventoryContract.COLUMN_DETAILS_QUANTITY+"="+pquantity+" , "+inventoryContract.COLUMN_DETAILS_RS + "="+pRs + " WHERE "+inventoryContract.COLUMN_DETAILS_PRODUCT_NAME+" = '"+pName+"'"+" AND "+inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE +"='"+mName+"'",null);
+        db.update(inventoryContract.TABLE_NAME, values, inventoryContract.COLUMN_DETAILS_PRODUCT_NAME + "=? AND " + inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE + " = ?", new String[]{pName, mName});
+        clearAll();
+    }
+}
+
+    private void clearAll()
+    {
+        pNameTxt_data.setText("");
+        mNameTxt_data.setText("");
+        quantityMain.setText("");
+        quatity_editText.setText("");
+        quantityTxt.setText("");
+        total_rs_data.setText("");
+        total_rs_data.setHint("");
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menuItem)
     {
@@ -84,10 +120,11 @@ public class displayIndivual extends AppCompatActivity {
         switch(menuItem.getItemId())
         {
             case R.id.save_display:
-                Toast.makeText(displayIndivual.this,"Save Button Selected",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(displayIndivual.this,"Save Button Selected",Toast.LENGTH_SHORT).show();
+                savedDataOnDatabase();
                 return true;
             case R.id.delete_display:
-                Toast.makeText(displayIndivual.this,"Delete Is Selected",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(displayIndivual.this,"Delete Is Selected",Toast.LENGTH_SHORT).show();
                 return true;
         }
         return super.onOptionsItemSelected(menuItem);
