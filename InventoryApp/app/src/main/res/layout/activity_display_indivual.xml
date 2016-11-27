@@ -1,15 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".displayIndivual">
-<!--<TextView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:id="@+id/text_Temp"/>-->+
-</LinearLayout>
+    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical"
+        tools:context=".displayIndivual">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLines="2"
+                android:id="@+id/pName_display"
+                android:text="Product Name :"
+                android:textSize="16sp"
+                android:textColor="#0c7930"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="Temp Data"
+                android:paddingLeft="5dp"
+                android:id="@+id/pName_display_data"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:maxLines="2"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLines="2"
+                android:id="@+id/mName_display"
+                android:text="Manufacture Name :"
+                android:textSize="16sp"
+                android:textColor="#0c7930"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="Temp Data"
+                android:paddingLeft="5dp"
+                android:id="@+id/mName_display_data"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:maxLines="2"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/quantity_main"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textSize="16sp"
+            android:maxLines="2"
+            android:textColor="#0c7930"
+            android:text="Current Quantity = 8"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="+"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:id="@+id/btn_plus"
+                android:layoutDirection="ltr"/>
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/quantity_user_edit"
+                android:textSize="12sp"
+                android:layout_weight="2"
+                android:inputType="number"
+                android:hint="Enter Quantity (+ or -)"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="-"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:id="@+id/btn_negitive"
+                android:layoutDirection="rtl"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLines="2"
+                android:id="@+id/quantity_display"
+                android:text="Total Quantity :"
+                android:textSize="16sp"
+                android:textColor="#0c7930"/>
+            <TextView
+                android:id="@+id/quantity_display_data"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="Temp Data"
+                android:paddingLeft="5dp"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:textColor="#000000"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLines="2"
+                android:id="@+id/rs_display"
+                android:text="Rupees :"
+                android:textSize="16sp"
+                android:textColor="#0c7930"/>
+            <EditText
+                android:id="@+id/rs_display_data"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Enter Rupees"
+                android:textSize="16sp"
+                android:inputType="numberDecimal"
+                android:textColor="#000000"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/total_rs"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+</ScrollView>

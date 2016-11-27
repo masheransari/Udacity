@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +17,9 @@ import org.w3c.dom.Text;
 
 public class displayIndivual extends AppCompatActivity {
 
+    TextView pNameTxt_data, mNameTxt_data, quantityTxt,quantityMain;
+    EditText total_rs_data,quatity_editText;
+    Button btnPlus, btnMinus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +29,46 @@ public class displayIndivual extends AppCompatActivity {
         String PName = i.getStringExtra("PName");
         String MName = i.getStringExtra("MName");
         String MCost = i.getStringExtra("PCost");
-        String MStock = i.getStringExtra("PStock");
+        final String MStock = i.getStringExtra("PStock");
 
-//        TextView t = (TextView)findViewById(R.id.text_Temp);
-//        String temp = "Name = "+PName+", MName = "+MName+" , PCost = "+MCost+" , MStock = "+MStock;
-//        t.setText(temp);
+        btnMinus = (Button)findViewById(R.id.btn_negitive);
+        btnPlus = (Button)findViewById(R.id.btn_plus);
+
+        total_rs_data = (EditText)findViewById(R.id.rs_display_data);
+        total_rs_data.setHint("Current Rupees = "+MCost);
+
+        quantityMain = (TextView)findViewById(R.id.quantity_main);
+
+        quantityMain.setText("Current Quantity = "+MStock);
+        pNameTxt_data = (TextView)findViewById(R.id.pName_display_data);
+        pNameTxt_data.setText(""+PName);
+
+        mNameTxt_data = (TextView)findViewById(R.id.mName_display_data);
+        mNameTxt_data.setText(""+MName);
+
+        quantityTxt = (TextView)findViewById(R.id.quantity_display_data);
+        quantityTxt.setText(""+MStock);
+
+
+        quatity_editText = (EditText)findViewById(R.id.quantity_user_edit);
+        btnPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              int temp = Integer.valueOf(quatity_editText.getText().toString());
+                temp = Integer.valueOf(MStock)+temp;
+                quantityTxt.setText(String.valueOf(temp));
+            }
+        });
+        btnMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int temp = Integer.valueOf(quatity_editText.getText().toString());
+                temp = Integer.valueOf(MStock)- temp;
+                quantityTxt.setText(String.valueOf(temp));
+            }
+        });
     }
+
 
 
     @Override

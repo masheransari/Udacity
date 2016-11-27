@@ -23,7 +23,7 @@
                 android:value="com.example.asheransari.inventoryapp.MainActivity"/>
         </activity>
 
-        <activity android:name=".displayIndivual" android:label="Display Indiviual Data">
+        <activity android:name=".displayIndivual" android:label="Update Data">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.asheransari.inventoryapp.MainActivity"/>
