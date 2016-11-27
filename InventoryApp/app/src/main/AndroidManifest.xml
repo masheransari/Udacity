@@ -15,9 +15,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".tempFolder.insert" />
-        <activity android:name=".tempFolder.displayIndivual" />
-        <activity android:name=".tempFolder.itemNew"></activity>
+
+        <activity android:name=".insert" android:label="Insert New Record"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.asheransari.inventoryapp.MainActivity"/>
+        </activity>
+
+        <activity android:name=".displayIndivual" android:label="Display Indivual Data">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.asheransari.inventoryapp.MainActivity"/>
+        </activity>
+
+        <activity android:name=".itemNew" android:label="New Item Insert">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.asheransari.inventoryapp.MainActivity"/>
+        </activity>
+
     </application>
 
 </manifest>

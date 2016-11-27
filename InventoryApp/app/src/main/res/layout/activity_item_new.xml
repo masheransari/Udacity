@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".tempFolder.itemNew">
+    tools:context=".itemNew">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,6 +19,7 @@
     <EditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/edit_item_id"
     android:layout_marginTop="20dp"
     android:textColor="#000000"
     android:hint="Enter New Item"
@@ -28,6 +29,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/btn_id"
         android:text="Insert"
         android:paddingTop="10dp"
         android:layout_gravity="center_horizontal"/>
@@ -36,12 +38,45 @@
         android:layout_height="0.5dp"
         android:layout_marginTop="10dp"
         android:background="#000000"/>
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textColor="#000000"
-        android:id="@+id/total_item"
-        android:text="No Item Found"
-        android:layout_marginTop="10dp"/>
+        android:layout_height="match_parent">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_item_id"/>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/empty_view_id"
+                    android:layout_centerInParent="true">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/empty_pic_id"
+                        android:src="@drawable/icon_item"/>
+                    <TextView
+                        android:id="@+id/empty_title_text_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/empty_pic_id"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:paddingTop="8dp"
+                        android:text="It's a bit Lonely here...."
+                        android:textAppearance="?android:textAppearanceMedium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/empty_title_text_id"
+                        android:fontFamily="sans-serif"
+                        android:paddingTop="8dp"
+                        android:text="Get start by adding a new Item"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="#A2AAB0"
+                        />
+                </RelativeLayout>
+    </RelativeLayout>
 </LinearLayout>

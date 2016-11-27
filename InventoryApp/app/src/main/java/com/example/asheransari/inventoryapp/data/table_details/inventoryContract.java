@@ -1,4 +1,4 @@
-package com.example.asheransari.inventoryapp.data;
+package com.example.asheransari.inventoryapp.data.table_details;
 
 import android.provider.BaseColumns;
 
@@ -20,8 +20,4 @@ public class inventoryContract implements BaseColumns {
 
     public final static String COLUMN_DETAILS_RS = "rs";
 
-//    private inventoryContract(String name, String mName, int quantity, int price)
-//    {
-//        this.N
-//    }
 }

@@ -1,15 +1,15 @@
-package com.example.asheransari.inventoryapp.tempFolder;
+package com.example.asheransari.inventoryapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.asheransari.inventoryapp.R;
 
-public class insert extends AppCompatActivity {
+public class displayIndivual extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert);
+        setContentView(R.layout.activity_display_indivual);
     }
 }

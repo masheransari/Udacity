@@ -3,7 +3,9 @@ package com.example.asheransari.inventoryapp.data;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
+
+import com.example.asheransari.inventoryapp.data.table_details.inventoryContract;
+import com.example.asheransari.inventoryapp.data.table_details.itemContract;
 
 /**
  * Created by asher.ansari on 11/21/2016.
@@ -23,10 +25,14 @@ public class InventoryDbHelper extends SQLiteOpenHelper {
             + inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE + " TEXT NOT NULL, "
             + inventoryContract.COLUMN_DETAILS_QUANTITY + " INTEGER NOT NULL, "
             + inventoryContract.COLUMN_DETAILS_RS + " INTEGER NOT NULL DEFAULT 0 "+");";
+    private static final String SQL_CREATE_ITEM_NAME_TABLE = "CREATE TABLE "+ itemContract.TABLE_NAME_ITEM + " ("
+            + itemContract._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + itemContract.COLUMN_ITEM_DETAIL_NAME +" TEXT NOT NULL );";
 
     public InventoryDbHelper(Context context)
     {
         super(context ,DATABASE_NAME ,null ,DATABASE_VERSION );
+
 //        Toast.makeText(context, "In inventoryDbHelper Class",Toast.LENGTH_SHORT).show();
     }
 
@@ -35,7 +41,7 @@ public class InventoryDbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SQL_CREATE_DETAILS_TABLE);
 //        Toast.makeText(null, "Database Created", Toast.LENGTH_SHORT).show();
 //        onCreate(sqLiteDatabase);
-
+        sqLiteDatabase.execSQL(SQL_CREATE_ITEM_NAME_TABLE);
     }
 
     @Override

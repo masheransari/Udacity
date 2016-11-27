@@ -11,13 +11,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.example.asheransari.inventoryapp.adapter.inventoryAdapter;
 import com.example.asheransari.inventoryapp.data.InventoryCursorAdapter;
 import com.example.asheransari.inventoryapp.data.InventoryDbHelper;
-import com.example.asheransari.inventoryapp.data.inventoryContract;
-import com.example.asheransari.inventoryapp.tempFolder.displayIndivual;
-import com.example.asheransari.inventoryapp.tempFolder.itemNew;
+import com.example.asheransari.inventoryapp.data.table_details.inventoryContract;
+import com.example.asheransari.inventoryapp.variable_classes.variableClass;
 
 import java.util.ArrayList;
 
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity{
 //        Cursor cursor = displayDatabaseInfo();
 //        mCursorAdapter = new InventoryCursorAdapter(this, cursor);
 
-        Toast.makeText(MainActivity.this,"Null",Toast.LENGTH_LONG).show();
+//        Toast.makeText(MainActivity.this,"Null",Toast.LENGTH_LONG).show();
     }
 
 
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity{
             mInventoryContract.TABLE_NAME,
                 projection, null,null,null,null,null
         );
-        inventoryAdapter inventoryAdapter;
+
 
         try
         {
@@ -96,9 +95,10 @@ public class MainActivity extends AppCompatActivity{
 //                Toast.makeText(MainActivity.this,"Here 2",Toast.LENGTH_SHORT).show();
 
                 arrayList.add(new variableClass(name, Mname,quantity,mRupees));
-
+//                Log.e("MainActivity","name = "+name + ", Manufacture Name = "+Mname+ " , Quantity = "+quantity+ " , Rupees = "+mRs);
             }
-            inventoryAdapter = new inventoryAdapter(this,arrayList);
+
+            inventoryAdapter inventoryAdapter = new inventoryAdapter(MainActivity.this, arrayList);
 
             listView.setAdapter(inventoryAdapter);
         }
@@ -106,8 +106,6 @@ public class MainActivity extends AppCompatActivity{
                 cursor.close();
         }
 
-//        mCursorAdapter = new InventoryCursorAdapter(this, cursor);
-//        listView.setAdapter(mCursorAdapter);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -120,9 +118,10 @@ public class MainActivity extends AppCompatActivity{
         switch (menuItem.getItemId())
         {
             case R.id.insert_button:
-                insertDb();
-//                Intent i = new Intent(MainActivity.this, insert.class);
-//                startActivity(i);
+//                insertDb();
+//                displayDatabaseInfo();
+                Intent i = new Intent(MainActivity.this, insert.class);
+                startActivity(i);
                 return true;
             case R.id.insert_item_only:
                 Intent ia = new Intent(MainActivity.this, itemNew.class);
@@ -139,18 +138,16 @@ public class MainActivity extends AppCompatActivity{
         return super.onOptionsItemSelected(menuItem);
     }
 
-//    @Override
-//    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-//        return null;
-//    }
-//
-//    @Override
-//    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
-//
-//    }
-//
-//    @Override
-//    public void onLoaderReset(Loader<Cursor> loader) {
-//
-//    }
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+    }
+    @Override
+    public void onRestart()
+    {
+        super.onRestart();
+        finish();
+        startActivity(getIntent());
+    }
 }

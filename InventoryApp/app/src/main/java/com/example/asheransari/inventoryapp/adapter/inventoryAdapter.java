@@ -1,11 +1,14 @@
-package com.example.asheransari.inventoryapp;
+package com.example.asheransari.inventoryapp.adapter;
 
 import android.app.Activity;
-import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.example.asheransari.inventoryapp.R;
+import com.example.asheransari.inventoryapp.variable_classes.variableClass;
 
 import java.util.ArrayList;
 
@@ -23,7 +26,10 @@ public class inventoryAdapter extends ArrayAdapter<variableClass>{
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View view = convertView;
-        if (view == null){
+        if (view == null) {
+            view = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent,false);
+        }
+
             variableClass  variableClass = getItem(position);
             TextView name = (TextView)view.findViewById(R.id.item_name);
             TextView Mname = (TextView)view.findViewById(R.id.item_manufacture);
@@ -31,12 +37,12 @@ public class inventoryAdapter extends ArrayAdapter<variableClass>{
             TextView quantity = (TextView)view.findViewById(R.id.item_quantity);
             TextView price = (TextView)view.findViewById(R.id.item_price);
 
-            name.setText(variableClass.getpName());
-            Mname.setText(variableClass.getmName());
-            quantity.setText(variableClass.getMquantity());
-            price.setText(variableClass.getMcost());
+            name.setText(variableClass.getPName());
+            Mname.setText("Manufacture Name : "+variableClass.getmName());
+            quantity.setText(String.valueOf(variableClass.getMquantity())+" Pieces available");
+            price.setText("Rs : "+String.valueOf(variableClass.getMcost())+" per piece");
 
-        }
+
         return view;
     }
 }

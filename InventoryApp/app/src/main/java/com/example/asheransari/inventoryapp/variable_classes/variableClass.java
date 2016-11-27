@@ -1,28 +1,28 @@
-package com.example.asheransari.inventoryapp;
+package com.example.asheransari.inventoryapp.variable_classes;
 
 /**
  * Created by asher.ansari on 11/24/2016.
  */
 public class variableClass {
 
+    private String PName;
     private String mName;
-    private String pName;
     int mquantity;
     int mcost;
 
-    public variableClass(String mName, String pName, int mquantity, int mcost) {
+    public variableClass(String PName, String mName, int mquantity, int mcost) {
+        this.PName = PName;
         this.mName = mName;
-        this.pName = pName;
         this.mquantity = mquantity;
         this.mcost = mcost;
     }
 
-    public String getmName() {
-        return mName;
+    public String getPName() {
+        return PName;
     }
 
-    public String getpName() {
-        return pName;
+    public String getmName() {
+        return mName;
     }
 
     public int getMquantity() {
