@@ -17,5 +17,4 @@
         android:title="Display Items Indiviual"
         app:showAsAction="never"
         />
-
 </menu>

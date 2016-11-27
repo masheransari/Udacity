@@ -56,21 +56,29 @@ public class MainActivity extends AppCompatActivity{
 //                variableClass  variableClass =
                 variableClass variableClass = arrayList.get(position);
 
+                Intent i = new Intent(MainActivity.this,displayIndivual.class);
+                i.putExtra("PName",variableClass.getPName());
+                i.putExtra("MName",variableClass.getmName());
+                i.putExtra("PCost",String.valueOf(variableClass.getMcost()));
+                i.putExtra("PStock",String.valueOf(variableClass.getMquantity()));
+                startActivity(i);
 //                Toast.makeText(MainActivity.this,""+variableClass.getPName()+" , "+variableClass.getmName()+" , "+ variableClass.getMquantity()+" , "+variableClass.getMcost(),Toast.LENGTH_SHORT).show();
-//                registerForContextMenu(listView);
-
             }
         });
 
 
+
+//                this is also the part of onCreateContextMenu
+//                registerForContextMenu(listView);
     }
+//    /here the onCreateContextMenu Detail.
 //    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo info)
 //    {
 //        super.onCreateContextMenu(menu, v, info);
 //        MenuInflater inflater = getMenuInflater();
 //        inflater.inflate(R.menu.context_menu,menu);
 //    }
-
+//
 //    public boolean onContextItemSelected(MenuItem item)
 //    {
 //        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
@@ -90,7 +98,7 @@ public class MainActivity extends AppCompatActivity{
 //                return super.onContextItemSelected(item);
 //        }
 //
-//    }
+//      }
 
     private void insertDb()
     {

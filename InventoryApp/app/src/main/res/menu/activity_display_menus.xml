@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/delete_display"
+        android:title="Delete This Record"
+        android:icon="@drawable/delete"
+        android:showAsAction="always"
+        />
+    <item android:id="@+id/save_display"
+        android:title="Save on Database"
+        android:icon="@drawable/save_update"
+        android:showAsAction="always"/>
+</menu>
