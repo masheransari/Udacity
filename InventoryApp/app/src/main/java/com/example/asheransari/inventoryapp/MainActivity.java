@@ -7,10 +7,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.asheransari.inventoryapp.adapter.inventoryAdapter;
 import com.example.asheransari.inventoryapp.data.InventoryCursorAdapter;
@@ -36,12 +40,28 @@ public class MainActivity extends AppCompatActivity{
         View emptyVew = findViewById(R.id.empty_view);
         listView.setEmptyView(emptyVew);
 
-        displayDatabaseInfo();
+        final ArrayList<variableClass> arrayList = displayDatabaseInfo();
+        inventoryAdapter inventoryAdapter = new inventoryAdapter(MainActivity.this, arrayList);
 
-//        Cursor cursor = displayDatabaseInfo();
-//        mCursorAdapter = new InventoryCursorAdapter(this, cursor);
+        listView.setAdapter(inventoryAdapter);
+//        displayDatabaseInfo();
 
-//        Toast.makeText(MainActivity.this,"Null",Toast.LENGTH_LONG).show();
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+//                Toast.makeText(MainActivity.this,"Position = "+position,Toast.LENGTH_SHORT).show();
+
+//                variableClass  variableClass =
+                variableClass variableClass = arrayList.get(position);
+
+                Toast.makeText(MainActivity.this,""+variableClass.getPName()+" , "+variableClass.getmName()+" , "+ variableClass.getMquantity()+" , "+variableClass.getMcost(),Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
     }
 
 
@@ -55,10 +75,8 @@ public class MainActivity extends AppCompatActivity{
         values.put(inventoryContract.COLUMN_DETAILS_RS, 120);
 
         db.insert(inventoryContract.TABLE_NAME, null, values);
-//        Uri uri = getContentResolver().insert(inventoryContract.TABLE_NAME, values);
-
     }
-    private void displayDatabaseInfo()
+    private ArrayList<variableClass> displayDatabaseInfo()
     {
         ArrayList<variableClass> arrayList = new ArrayList<variableClass>();
 //        InventoryDbHelper inventoryDbHelper = new InventoryDbHelper(this);
@@ -98,14 +116,14 @@ public class MainActivity extends AppCompatActivity{
 //                Log.e("MainActivity","name = "+name + ", Manufacture Name = "+Mname+ " , Quantity = "+quantity+ " , Rupees = "+mRs);
             }
 
-            inventoryAdapter inventoryAdapter = new inventoryAdapter(MainActivity.this, arrayList);
-
-            listView.setAdapter(inventoryAdapter);
+//            inventoryAdapter inventoryAdapter = new inventoryAdapter(MainActivity.this, arrayList);
+//
+//            listView.setAdapter(inventoryAdapter);
         }
         finally {
                 cursor.close();
         }
-
+        return arrayList;
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){

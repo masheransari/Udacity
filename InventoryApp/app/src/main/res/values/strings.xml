@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Inventory App</string>
+    <string name="update_activity">Update This Record</string>
+    <string name="delete_activity">Delete This Record</string>
 </resources>

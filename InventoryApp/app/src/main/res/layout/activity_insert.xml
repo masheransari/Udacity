@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical"
-    android:background="#e5f7e8"
     tools:context=".insert">
 
     <LinearLayout
@@ -19,7 +18,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="Select Item *"
-        android:textColor="#124b29"
+        android:textColor="#05381a"
         android:textSize="13sp"/>
     <Spinner
         android:layout_width="0dp"
@@ -38,7 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:textColor="#124b29"
+        android:textColor="#05381a"
         android:text="Manufacture Name *"
         android:textSize="13sp"
         android:gravity="center"
@@ -64,7 +63,7 @@
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:id="@+id/current_stock"
-    android:textColor="#124b29"
+    android:textColor="#05381a"
     android:textSize="13sp"
     android:text="Product Stock *"
     android:maxLines="2"
@@ -89,7 +88,7 @@
             android:layout_height="match_parent"
             android:id="@+id/current_cost"
             android:layout_weight="1"
-            android:textColor="#124b29"
+            android:textColor="#05381a"
             android:textSize="13sp"
             android:maxLines="2"
             android:text="Product Rs *"
