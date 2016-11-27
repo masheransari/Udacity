@@ -57,40 +57,40 @@ public class MainActivity extends AppCompatActivity{
                 variableClass variableClass = arrayList.get(position);
 
 //                Toast.makeText(MainActivity.this,""+variableClass.getPName()+" , "+variableClass.getmName()+" , "+ variableClass.getMquantity()+" , "+variableClass.getMcost(),Toast.LENGTH_SHORT).show();
-                registerForContextMenu(listView);
+//                registerForContextMenu(listView);
 
             }
         });
 
 
     }
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo info)
-    {
-        super.onCreateContextMenu(menu, v, info);
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.context_menu,menu);
-    }
+//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo info)
+//    {
+//        super.onCreateContextMenu(menu, v, info);
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.context_menu,menu);
+//    }
 
-    public boolean onContextItemSelected(MenuItem item)
-    {
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        switch (item.getItemId())
-        {
-            case R.id.delete:
-                Toast.makeText(MainActivity.this,"Delete is Selecte",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(MainActivity.this,insert.class);
-                startActivity(i);
-                return true;
-            case R.id.update:
-                Toast.makeText(MainActivity.this,"Update is Selecte",Toast.LENGTH_SHORT).show();
-                Intent j = new Intent(MainActivity.this,displayIndivual.class);
-                startActivity(j);
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
-
-    }
+//    public boolean onContextItemSelected(MenuItem item)
+//    {
+//        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+//        switch (item.getItemId())
+//        {
+//            case R.id.delete:
+//                Toast.makeText(MainActivity.this,"Delete is Selecte",Toast.LENGTH_SHORT).show();
+//                Intent i = new Intent(MainActivity.this,insert.class);
+//                startActivity(i);
+//                return true;
+//            case R.id.update:
+//                Toast.makeText(MainActivity.this,"Update is Selecte",Toast.LENGTH_SHORT).show();
+//                Intent j = new Intent(MainActivity.this,displayIndivual.class);
+//                startActivity(j);
+//                return true;
+//            default:
+//                return super.onContextItemSelected(item);
+//        }
+//
+//    }
 
     private void insertDb()
     {
