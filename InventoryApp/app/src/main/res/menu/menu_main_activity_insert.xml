@@ -12,9 +12,5 @@
         android:id="@+id/insert_item_only"
         android:title="Insert Item Name Only"
         android:showAsAction="never"/>
-    <item
-        android:id="@+id/Display_Item"
-        android:title="Display Items Indiviual"
-        app:showAsAction="never"
-        />
+
 </menu>

@@ -2,13 +2,13 @@
 <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     >
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="10dp"
         android:orientation="vertical"
         tools:context=".displayIndivual">
@@ -23,8 +23,9 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:maxLines="2"
+                android:layout_marginRight="5dp"
                 android:id="@+id/pName_display"
-                android:text="Product Name :"
+                android:text="Product Name"
                 android:textSize="16sp"
                 android:textColor="#0c7930"/>
             <TextView
@@ -33,10 +34,11 @@
                 android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:text="Temp Data"
-                android:paddingLeft="5dp"
                 android:id="@+id/pName_display_data"
                 android:textSize="16sp"
                 android:textColor="#000000"
+                android:paddingLeft="15dp"
+                android:background="@drawable/my_border"
                 android:maxLines="2"/>
         </LinearLayout>
         <LinearLayout
@@ -48,10 +50,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_marginRight="5dp"
                 android:gravity="center"
                 android:maxLines="2"
                 android:id="@+id/mName_display"
-                android:text="Manufacture Name :"
+                android:text="Manufacture Name"
                 android:textSize="16sp"
                 android:textColor="#0c7930"/>
             <TextView
@@ -60,9 +63,10 @@
                 android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:text="Temp Data"
-                android:paddingLeft="5dp"
                 android:id="@+id/mName_display_data"
                 android:textSize="16sp"
+                android:paddingLeft="15dp"
+                android:background="@drawable/my_border"
                 android:textColor="#000000"
                 android:maxLines="2"/>
         </LinearLayout>
@@ -85,7 +89,7 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:text="+"
                 android:textStyle="bold"
@@ -94,16 +98,20 @@
                 android:layoutDirection="ltr"/>
             <EditText
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/quantity_user_edit"
                 android:textSize="12sp"
                 android:layout_weight="2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/my_border"
+                android:paddingLeft="15dp"
                 android:inputType="number"
                 android:hint="Enter Quantity (+ or -)"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:text="-"
                 android:textStyle="bold"
@@ -121,9 +129,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_marginRight="5dp"
                 android:maxLines="2"
                 android:id="@+id/quantity_display"
-                android:text="Total Quantity :"
+                android:text="Total Quantity"
                 android:textSize="16sp"
                 android:textColor="#0c7930"/>
             <TextView
@@ -133,9 +142,10 @@
                 android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:text="Temp Data"
-                android:paddingLeft="5dp"
                 android:textSize="16sp"
                 android:inputType="number"
+                android:paddingLeft="15dp"
+                android:background="@drawable/my_border"
                 android:textColor="#000000"
                 />
         </LinearLayout>
@@ -149,9 +159,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_marginRight="5dp"
                 android:maxLines="2"
                 android:id="@+id/rs_display"
-                android:text="Rupees :"
+                android:text="Rupees"
                 android:textSize="16sp"
                 android:textColor="#0c7930"/>
             <EditText
@@ -161,6 +172,8 @@
                 android:layout_weight="2"
                 android:hint="Enter Rupees"
                 android:textSize="16sp"
+                android:paddingLeft="15dp"
+                android:background="@drawable/my_border"
                 android:inputType="numberDecimal"
                 android:textColor="#000000"
                 />

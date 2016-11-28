@@ -180,10 +180,6 @@ public class MainActivity extends AppCompatActivity{
                 Intent ia = new Intent(MainActivity.this, itemNew.class);
                 startActivity(ia);
                 return true;
-            case R.id.Display_Item:
-                Intent ib = new Intent(MainActivity.this, displayIndivual.class);
-                startActivity(ib);
-                return true;
             case android.R.id.home:
                 NavUtils.navigateUpFromSameTask(this);
                 return true;

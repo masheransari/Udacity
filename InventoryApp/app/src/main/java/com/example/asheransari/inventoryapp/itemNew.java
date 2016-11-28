@@ -78,6 +78,7 @@ public class itemNew extends AppCompatActivity {
             values.put(itemContract.COLUMN_ITEM_DETAIL_NAME,data);
 
             sqLiteDatabase.insert(itemContract.TABLE_NAME_ITEM, null,values);
+
         }
     }
     private boolean checkData(String data)
@@ -142,7 +143,8 @@ public class itemNew extends AppCompatActivity {
             inventoryItemAdapter adapter = new inventoryItemAdapter(itemNew.this,arrayList);
 
             listView.setAdapter(adapter);
-
+            final EditText editText = (EditText) findViewById(R.id.edit_item_id);
+            editText.setText("");
         }
         finally {
             cursor.close();

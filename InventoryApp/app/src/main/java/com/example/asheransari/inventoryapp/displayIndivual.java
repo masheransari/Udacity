@@ -40,7 +40,7 @@ public class displayIndivual extends AppCompatActivity {
         btnPlus = (Button)findViewById(R.id.btn_plus);
 
         total_rs_data = (EditText)findViewById(R.id.rs_display_data);
-        total_rs_data.setHint("Current Rupees = "+MCost);
+        total_rs_data.setHint("Rs: "+MCost+" Per Piece");
 
         quantityMain = (TextView)findViewById(R.id.quantity_main);
 
@@ -93,9 +93,28 @@ public void savedDataOnDatabase()
 //    db.update(inventoryContract.TABLE_NAME,values,inventoryContract.COLUMN_DETAILS_PRODUCT_NAME+"="+pName+ " AND "+inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE +" = "+mName,null);
 //    db.rawQuery("UPDATE "+inventoryContract.TABLE_NAME + " SET "+inventoryContract.COLUMN_DETAILS_QUANTITY+"="+pquantity+" , "+inventoryContract.COLUMN_DETAILS_RS + "="+pRs + " WHERE "+inventoryContract.COLUMN_DETAILS_PRODUCT_NAME+" = '"+pName+"'"+" AND "+inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE +"='"+mName+"'",null);
         db.update(inventoryContract.TABLE_NAME, values, inventoryContract.COLUMN_DETAILS_PRODUCT_NAME + "=? AND " + inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE + " = ?", new String[]{pName, mName});
-        clearAll();
+//        clearAll();
+        Intent i = new Intent(displayIndivual.this,MainActivity.class);
+
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(i);
     }
 }
+
+    private void delelteDataonDatabase()
+    {
+        String pName = pNameTxt_data.getText().toString();
+        String mName = mNameTxt_data.getText().toString();
+//        String pquantity = quantityTxt.getText().toString();
+//        String pRs = total_rs_data.getText().toString();
+
+        SQLiteDatabase db = mInventoryDbHelper.getWritableDatabase();
+        db.delete(inventoryContract.TABLE_NAME, inventoryContract.COLUMN_DETAILS_PRODUCT_NAME+"=? AND "+inventoryContract.COLUMN_DETAILS_PRODUCT_MANUFACTURE+"=?",new String[]{pName,mName});
+        Intent j = new Intent(displayIndivual.this,MainActivity.class);
+        j.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(j);
+
+    }
 
     private void clearAll()
     {
@@ -125,6 +144,7 @@ public void savedDataOnDatabase()
                 return true;
             case R.id.delete_display:
 //                Toast.makeText(displayIndivual.this,"Delete Is Selected",Toast.LENGTH_SHORT).show();
+                delelteDataonDatabase();
                 return true;
         }
         return super.onOptionsItemSelected(menuItem);
