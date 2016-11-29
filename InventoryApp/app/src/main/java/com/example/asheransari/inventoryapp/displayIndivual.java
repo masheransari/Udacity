@@ -41,6 +41,7 @@ public class displayIndivual extends AppCompatActivity {
 
         total_rs_data = (EditText)findViewById(R.id.rs_display_data);
         total_rs_data.setHint("Rs: "+MCost+" Per Piece");
+        total_rs_data.setText(MCost);
 
         quantityMain = (TextView)findViewById(R.id.quantity_main);
 

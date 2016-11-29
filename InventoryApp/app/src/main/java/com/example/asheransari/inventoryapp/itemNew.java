@@ -57,7 +57,7 @@ public class itemNew extends AppCompatActivity {
                     insertDb(text);
                     displayItemInfo();
                 }
-                Toast.makeText(itemNew.this,"data = "+text,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(itemNew.this,"data = "+text,Toast.LENGTH_SHORT).show();
             }
         });
     }
