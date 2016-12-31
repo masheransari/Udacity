@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity{
                 projection, null,null,null,null,null
         );
 
-
+//        Toast.makeText(MainActivity.this, ""+cursor.getCount(), Toast.LENGTH_SHORT).show();
         try
         {
             int pNameColumn = cursor.getColumnIndex(inventoryContract.COLUMN_DETAILS_PRODUCT_NAME);
